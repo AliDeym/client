@@ -2,6 +2,7 @@ import AjaxClient from './ajaxClient';
 import ApiClient from './apiClient';
 import WebStoreClient from './webstoreClient';
 import ProductCategories from './api/productCategories';
+import StoreRooms from '.api/storeRooms';
 import Products from './api/products/products';
 import ProductOptions from './api/products/options';
 import ProductOptionValues from './api/products/optionValues';
@@ -42,6 +43,7 @@ import WebStoreServices from './webstore/services';
 import WebStoreServiceSettings from './webstore/serviceSettings';
 import WebStoreServiceActions from './webstore/serviceActions';
 import WebStoreServiceLogs from './webstore/serviceLogs';
+import StoreRooms from './api/storeRooms';
 
 export default class Client {
 	constructor(options = {}) {
@@ -63,6 +65,7 @@ export default class Client {
 		this.products.variants = new ProductVariants(apiClient);
 		this.products.images = new ProductImages(apiClient);
 		this.productCategories = new ProductCategories(apiClient);
+		this.storeRooms = new StoreRooms(apiClient);
 		this.customers = new Customers(apiClient);
 		this.orders = new Orders(apiClient);
 		this.orders.discounts = new OrderDiscounts(apiClient);
