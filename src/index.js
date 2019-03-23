@@ -38,6 +38,7 @@ import Tokens from './api/tokens';
 import Redirects from './api/redirects';
 import Webhooks from './api/webhooks';
 import Files from './api/files';
+import Sms from './api/sms';
 import AppSettings from './api/apps/settings';
 import WebStoreAccount from './webstore/account';
 import WebStoreServices from './webstore/services';
@@ -69,6 +70,7 @@ export default class Client {
 		this.storeRooms = new StoreRooms(apiClient);
 		this.customers = new Customers(apiClient);
 		this.orders = new Orders(apiClient);
+		this.sms = new Sms(apiClient);
 		this.orders.discounts = new OrderDiscounts(apiClient);
 		this.orders.transactions = new OrderTransactions(apiClient);
 		this.orders.items = new OrderItems(apiClient);
@@ -101,6 +103,7 @@ export default class Client {
 		this.ajax.cart = new AjaxCart(ajaxClient);
 		this.ajax.countries = new Countries(ajaxClient);
 		this.ajax.currencies = new Currencies(ajaxClient);
+		this.ajax.sms = new Sms(ajaxClient);
 		this.ajax.shippingMethods = new AjaxShippingMethods(ajaxClient);
 		this.ajax.paymentMethods = new AjaxPaymentMethods(ajaxClient);
 		this.ajax.paymentFormSettings = new AjaxPaymentFormSettings(ajaxClient);
