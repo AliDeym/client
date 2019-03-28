@@ -7,6 +7,10 @@ export default class AjaxCart {
 		return this.client.get(`/cart`, null, cookie);
 	}
 
+	gateway(cookie) {
+		return this.client.get(`/cart/gateway`, null, cookie);
+	}
+
 	update(data) {
 		return this.client.put(`/cart`, data);
 	}
