@@ -26,6 +26,7 @@ import ShippingMethods from './api/shippingMethods';
 import PaymentMethods from './api/paymentMethods';
 import PaymentGateways from './api/paymentGateways';
 import AjaxShippingMethods from './api/ajaxShippingMethods';
+import AjaxPaymentHandler from './api/ajaxPaymentHandler';
 import AjaxPaymentMethods from './api/ajaxPaymentMethods';
 import AjaxPaymentFormSettings from './api/ajaxPaymentFormSettings';
 import Countries from './api/countries';
@@ -104,6 +105,7 @@ export default class Client {
 		this.ajax.countries = new Countries(ajaxClient);
 		this.ajax.currencies = new Currencies(ajaxClient);
 		this.ajax.sms = new Sms(ajaxClient);
+		this.ajax.paymentHandler = new AjaxPaymentHandler(ajaxClient);
 		this.ajax.shippingMethods = new AjaxShippingMethods(ajaxClient);
 		this.ajax.paymentMethods = new AjaxPaymentMethods(ajaxClient);
 		this.ajax.paymentFormSettings = new AjaxPaymentFormSettings(ajaxClient);
