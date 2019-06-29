@@ -5,7 +5,9 @@ export default class Products {
 	}
 
 	list(filter) {
-		return this.client.get(this.resourceUrl + "?refid=" + new Date().valueOf(), filter);
+		Object.assign(filter, {refid: new Date().valueOf()});
+
+		return this.client.get(this.resourceUrl, filter);
 	}
 
 	retrieve(id, filter) {
