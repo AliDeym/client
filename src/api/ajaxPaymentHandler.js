@@ -11,6 +11,10 @@ export default class AjaxPaymentHandler {
 		return this.client.post('/parsian', data);
 	}
 
+	saderat (data) {
+		return this.client.post('/saderat', data);
+	}
+
 	zarinpal(data) {
 		return this.client.post('/zarinpal', data);
 	}
